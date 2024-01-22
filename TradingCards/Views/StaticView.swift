@@ -12,7 +12,11 @@ struct StaticView: View {
         
         ZStack {
             
-            Color.orange
+            Color.yellow
+            
+            Color.lightPink
+                .ignoresSafeArea()
+                .padding()
             
             VStack {
                 
@@ -22,27 +26,8 @@ struct StaticView: View {
                         
                         Text("Evolves from Charmeleon")
                             .font(
-                                .system(size: 10)
+                                .system(size: 8)
                                 .bold()
-                                .italic()
-                            )
-                        
-                        Color.yellow
-                            .frame(height: 2)
-                        
-                        Text("Charizard")
-                            .font(
-                                .system(size: 30)
-                                .bold()
-                            )
-                        
-                    }
-                    
-                    VStack {
-                        
-                        Text("Put Charizard on the Stage 1 card")
-                            .font(
-                                .system(size: 10)
                                 .italic()
                             )
                         
@@ -51,22 +36,77 @@ struct StaticView: View {
                         
                         HStack {
                             
-                            Text("120 HP")
-                                .foregroundColor(.red)
-                                .font(
-                                    .system(size: 30)
-                                    .bold()
-                                )
+                            Spacer()
                             
-                             
+                            Text("Charizard")
+                                .font(
+                                    .system(size: 25)
+                                    .bold()
+                            )
+                                .padding(.top, -10)
                             
                         }
                         
                     }
                     
+                    VStack {
+                        
+                        VStack {
+                            Text("Put Charizard on the Stage 1 card")
+                                .font(
+                                    .system(size: 8)
+                                    .italic()
+                                )
+                            
+                            Color.yellow
+                                .frame(height: 2)
+                        }
+                        .offset(y: 342)
+                        
+                        HStack {
+                            
+                            Text("120 HP")
+                                .foregroundColor(.red)
+                                .font(
+                                    .system(size: 25)
+                                    .bold()
+                                )
+                                .padding(0)
+                            
+                             FireView()
+                                .frame(width: 30)
+                                .padding(0)
+                                .offset(y: 323)
+                            
+                        }
+                        .padding(.top, -10)
+                        
+                    }
+                    
                 }
+                .padding(.bottom, -10)
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
+             
+                ZStack {
+                    
+                    Rectangle()
+                        .fill(.yellow)
+                        .frame(height: 225)
+                        .padding(.leading, 30)
+                        .padding(.trailing, 30)
+                    
+                    Image("Charizard")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                    
+                }
+                .padding(.top, -343)
                 
             }
+            .padding()
+            .offset(y: -335)
             
         }
         

@@ -12,22 +12,26 @@ struct FireView: View {
         
         ZStack {
             
-            Circle()
-                .fill(
-                    RadialGradient(
-                        gradient: Gradient(colors: [Color.red, Color.white]),
-                        center: .center,
-                        startRadius: 200,
-                        endRadius: 150
+            GeometryReader { geo in
+                Circle()
+                    .fill (
+                        RadialGradient(
+                            gradient: Gradient(colors: [Color.white, Color.red]),
+                            center: .center,
+                            startRadius: 0,
+                            endRadius: geo.size.width
+                        )
                     )
-                )
-            
-            Image(systemName: "flame.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 320)
-                .offset(x: 8, y:15)
-            
+                    .overlay {
+                        Image(systemName: "flame.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(10)
+                    }
+                    .offset(y: geo.frame(in: .local).midX)
+
+            }
+
         }
         
     }
