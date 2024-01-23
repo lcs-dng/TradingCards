@@ -143,7 +143,7 @@ struct StaticView: View {
             
             // Charizard Description
         Text("""
-                                                                    All Energy attached
+                                                                             All Energy attached
 
 to this Pokemon are        Energy instead of their usual type.
 
@@ -151,19 +151,68 @@ This Pokemon Power stops working is this Pokemon is Asleep,
 
 Confused, or Paralyzed.
 """)
-        .font(.system(size: 11))
-        .offset(x: 18, y: 31)
+        .font(.system(size: 10).bold())
+        .offset(x: 13, y: 28)
         .multilineTextAlignment(.leading)
             
             FireView()
-                .frame(width: 22)
-                .offset(x: -28, y: 373)
+                .frame(width: 18)
+                .offset(x: -33, y: 376)
             
+            // Divider
             VStack {
                 
+                Color.black
+                    .frame(height: 2)
+                    .offset(y: 110)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
                 
+                Color.black
+                    .frame(height: 2)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
+                    .offset(y: 205)
+
+            }
+            
+            // Four Fireballs
+            VStack {
+                
+                HStack {
+                    FireView()
+                        .frame(width: 30)
+                    FireView()
+                        .frame(width: 30)
+                }
+                .offset(y:348)
+
+                HStack {
+                    FireView()
+                        .frame(width: 30)
+                    FireView()
+                        .frame(width: 30)
+                }
                 
             }
+            .offset(x: -133, y: 140)
+            
+            Text("Fire Spin")
+                .offset(x: -50, y: 140)
+                .font(.system(size: 20).bold())
+            
+            // Fire Spin Description
+            Text("""
+                        Discard 2 Energy
+
+from this Pokemon.
+""")
+            .font(.system(size: 13))
+            .offset(x: 6, y: 157)
+         
+            Text("100")
+                .font(.system(size: 35).bold())
+                .offset(x: 142, y: 155)
             
         }
         
