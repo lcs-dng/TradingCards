@@ -18,8 +18,10 @@ struct StaticView: View {
                 .ignoresSafeArea()
                 .padding()
             
+            // Upper Part
             VStack {
                 
+                // Upper Heading
                 HStack {
                     
                     // Charizard Title
@@ -109,6 +111,7 @@ struct StaticView: View {
                 }
                 .padding(.top, -335)
                 
+                // Text with yellow background
                 ZStack {
                     
                     Rectangle()
@@ -127,9 +130,40 @@ struct StaticView: View {
                     
                 }
                 
+                
+                
             }
             .padding()
             .offset(y: -335)
+            
+            Text("Pokemon Power: Energy Burn")
+                .font(.system(size: 15).bold())
+                .foregroundColor(.blue)
+                .offset(x: -37, y: -10)
+            
+            // Charizard Description
+        Text("""
+                                                                    All Energy attached
+
+to this Pokemon are        Energy instead of their usual type.
+
+This Pokemon Power stops working is this Pokemon is Asleep,
+
+Confused, or Paralyzed.
+""")
+        .font(.system(size: 11))
+        .offset(x: 18, y: 31)
+        .multilineTextAlignment(.leading)
+            
+            FireView()
+                .frame(width: 22)
+                .offset(x: -28, y: 373)
+            
+            VStack {
+                
+                
+                
+            }
             
         }
         
