@@ -22,6 +22,7 @@ struct StaticView: View {
                 
                 HStack {
                     
+                    // Charizard Title
                     VStack {
                         
                         Text("Evolves from Charmeleon")
@@ -48,7 +49,9 @@ struct StaticView: View {
                         }
                         
                     }
+                    .offset(y: 5)
                     
+                    // HP Title
                     VStack {
                         
                         VStack {
@@ -72,6 +75,7 @@ struct StaticView: View {
                                     .bold()
                                 )
                                 .padding(0)
+                                .offset(y: 4)
                             
                              FireView()
                                 .frame(width: 30)
@@ -82,6 +86,7 @@ struct StaticView: View {
                         .padding(.top, -10)
                         
                     }
+                    .offset(y: 1)
                     
                 }
                 .padding(.bottom, -10)
@@ -102,7 +107,25 @@ struct StaticView: View {
                         .frame(height: 200)
                     
                 }
-                .padding(.top, -343)
+                .padding(.top, -335)
+                
+                ZStack {
+                    
+                    Rectangle()
+                        .foregroundColor(.yellow)
+                        .frame(height: 22)
+                        .padding(.leading, 40)
+                        .padding(.trailing, 40)
+                        .padding(.top, -110)
+                        .overlay(Text("Flame Pokemon. Length: 5' 7', Weight: 199.5 Ibs.")
+                            .offset(y: -98))
+                        .font(
+                            .system(size: 11)
+                            .italic()
+                            .bold()
+                        )
+                    
+                }
                 
             }
             .padding()
