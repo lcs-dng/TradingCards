@@ -214,6 +214,85 @@ from this Pokemon.
                 .font(.system(size: 35).bold())
                 .offset(x: 142, y: 155)
             
+            // Waterball
+            VStack {
+                
+                Text("weakness")
+                    .font(
+                        .system(size: 12)
+                        .bold()
+                    )
+                    .padding(.bottom, -10)
+                
+                Image("waterBall")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 27)
+                
+            }
+            .offset(x: -130, y: 240)
+            
+            // Fistball
+            VStack {
+                
+                Text("resistance")
+                    .font(
+                        .system(size: 12)
+                        .bold()
+                    )
+                    .padding(.bottom, -7)
+                
+                HStack {
+                    Image("fistBall")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 27)
+                        .offset(x: 10)
+                    
+                    ZStack(alignment: .trailing, content: {
+                        Text("-30")
+                    })  .font(
+                            .system(size: 15)
+                            .bold()
+                        )
+                }
+                
+            }
+            .offset(y: 240)
+            
+            // 3Stars
+            VStack {
+                
+                Text("retreat cost")
+                    .font(
+                        .system(size: 12)
+                        .bold()
+                    )
+                    .padding(.bottom, -9)
+                    .offset(x: 10)
+                
+                    Image("3starBalls")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 27)
+                        .offset(x: 10)
+                                        
+            }
+            .offset(x: 110, y: 240)
+            
+            // Bottom Text
+            Text("""
+Spits fire that is hot enough to melt boulders. Known to
+unintentionally cause forest fire. LV.76 #6
+""")
+            .font(
+                .system(size: 12)
+                .bold()
+            )
+            .padding(5)
+            .border(.yellow)
+            .offset(y: 300)
+            
         }
         
     }
