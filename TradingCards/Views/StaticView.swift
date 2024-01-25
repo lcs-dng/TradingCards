@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct TradingCard {
+    
+    let name: String
+    let HP: String
+    let evolvesFrom: String
+    let stage1Card: String
+    let imageName: String
+    let pokemonDescription: String
+    let pokemonPower: String
+    let powerDescription: String
+    let specialAttack: String
+    let attackDescription: String
+    let attackNumber: String
+    let weaknessSymbol: String
+    let resistanceSymbol: String
+    let retreatCostSymbol: String
+    let funFact: String
+    
+}
+
 struct StaticView: View {
     var body: some View {
         
