@@ -18,7 +18,7 @@ struct Navigation: View {
             
             Image(CoverPhoto)
                 .resizable()
-                .frame(width: 55,height: 75)
+                .frame(width: 55,height: 60)
                 .offset(y:2)
                 .clipShape(.circle)
             
