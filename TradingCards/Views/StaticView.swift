@@ -9,21 +9,7 @@ import SwiftUI
 
 struct StaticView: View {
     
-    let pokemonName: String
-    let HP: String
-    let evolvesFrom: String
-    let stage1Card: String
-    let imageName: String
-    let pokemonDescription: String
-    let pokemonPower: String
-    let powerDescription: String
-    let specialAttack: String
-    let attackDescription: String
-    let attackNumber: String
-    let weaknessSymbol: String
-    let resistanceSymbol: String
-    let retreatCostSymbol: String
-    let funFact: String
+    let character: TradingCard
     
     var body: some View {
         
@@ -44,7 +30,7 @@ struct StaticView: View {
                     // Charizard Title
                     VStack {
                         
-                        Text(evolvesFrom)
+                        Text(character.evolvesFrom)
                             .font(
                                 .system(size: 8)
                                 .bold()
@@ -58,7 +44,7 @@ struct StaticView: View {
                             
                             Spacer()
                             
-                            Text(pokemonName)
+                            Text(character.pokemonName)
                                 .font(
                                     .system(size: 25)
                                     .bold()
@@ -74,7 +60,7 @@ struct StaticView: View {
                     VStack {
                         
                         VStack {
-                            Text(stage1Card)
+                            Text(character.stage1Card)
                                 .font(
                                     .system(size: 8)
                                     .italic()
@@ -87,7 +73,7 @@ struct StaticView: View {
                         
                         HStack {
                             
-                            Text(HP)
+                            Text(character.HP)
                                 .foregroundColor(.red)
                                 .font(
                                     .system(size: 25)
@@ -120,7 +106,7 @@ struct StaticView: View {
                         .padding(.leading, 30)
                         .padding(.trailing, 30)
                     
-                    Image(imageName)
+                    Image(character.imageName)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 200)
@@ -137,7 +123,7 @@ struct StaticView: View {
                         .padding(.leading, 40)
                         .padding(.trailing, 40)
                         .padding(.top, -110)
-                        .overlay(Text(pokemonDescription)
+                        .overlay(Text(character.pokemonDescription)
                             .offset(y: -98))
                         .font(
                             .system(size: 11)
@@ -153,13 +139,13 @@ struct StaticView: View {
             .padding()
             .offset(y: -335)
             
-            Text(pokemonPower)
+            Text(character.pokemonPower)
                 .font(.system(size: 15).bold())
                 .foregroundColor(.blue)
                 .offset(x: -37, y: -10)
             
             // Charizard Description
-        Text(powerDescription)
+            Text(character.powerDescription)
         .font(.system(size: 10).bold())
         .offset(x: 13, y: 28)
         .multilineTextAlignment(.leading)
@@ -206,16 +192,16 @@ struct StaticView: View {
             }
             .offset(x: -133, y: 140)
             
-            Text(specialAttack)
+            Text(character.specialAttack)
                 .offset(x: -50, y: 140)
                 .font(.system(size: 20).bold())
             
             // Fire Spin Description
-            Text(attackDescription)
+            Text(character.attackDescription)
             .font(.system(size: 13))
             .offset(x: 6, y: 157)
          
-            Text(attackNumber)
+            Text(character.attackNumber)
                 .font(.system(size: 35).bold())
                 .offset(x: 142, y: 155)
             
@@ -229,7 +215,7 @@ struct StaticView: View {
                     )
                     .padding(.bottom, -10)
                 
-                Image(weaknessSymbol)
+                Image(character.weaknessSymbol)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 27)
@@ -248,7 +234,7 @@ struct StaticView: View {
                     .padding(.bottom, -7)
                 
                 HStack {
-                    Image(resistanceSymbol)
+                    Image(character.resistanceSymbol)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 27)
@@ -276,7 +262,7 @@ struct StaticView: View {
                     .padding(.bottom, -9)
                     .offset(x: 10)
                 
-                    Image(retreatCostSymbol)
+                Image(character.retreatCostSymbol)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 27)
@@ -286,7 +272,7 @@ struct StaticView: View {
             .offset(x: 110, y: 240)
             
             // Bottom Text
-            Text(funFact)
+            Text(character.funFact)
             .font(
                 .system(size: 12)
                 .bold()
@@ -300,62 +286,9 @@ struct StaticView: View {
     }
 }
 
-let Charizard = StaticView(
-    pokemonName: "Charizard",
-    HP: "120 HP",
-    evolvesFrom: "Evolves from Charmeleon",
-    stage1Card: "Put Charizard on the Stage 1 card",
-    imageName: "Charizard",
-    pokemonDescription: "Flame Pokemon. Length: 5' 7', Weight: 199.5 Ibs.",
-    pokemonPower: "Pokemon Power: Energy Burn",
-    powerDescription: """
-                                                                             All Energy attached
-
-to this Pokemon are        Energy instead of their usual type.
-
-This Pokemon Power stops working is this Pokemon is Asleep,
-
-Confused, or Paralyzed.
-""",
-    specialAttack: "Fire Spin",
-    attackDescription: """
-                        Discard 2 Energy
-
-from this Pokemon.
-""",
-    attackNumber: "100",
-    weaknessSymbol: "waterBall",
-    resistanceSymbol: "fistBall",
-    retreatCostSymbol: "3starBalls",
-    funFact: """
-Spits fire that is hot enough to melt boulders. Known to
-unintentionally cause forest fire. LV.76 #6
-"""
-)
-
-let Magmar = StaticView(
-    pokemonName: "Magmar",
-    HP: "50 HP",
-    evolvesFrom: "Basic Pokemon",
-    stage1Card: " ",
-    imageName: "Magmar",
-    pokemonDescription: "NO. 126 Spitfire Pokemon HT: 4'03' WT: 98.1 lbs.",
-    pokemonPower: "Fire Punch",
-    powerDescription: " ",
-    specialAttack: "               Flamethrower",
-    attackDescription: """
-
-
-    Discard a fire Energy attached
-    to this Pokemon
-""",
-    attackNumber: "60",
-    weaknessSymbol: "waterBall",
-    resistanceSymbol: " ",
-    retreatCostSymbol: "3starBalls",
-    funFact: "Its body always burn with an orange glow that enables it to hide perfectly among flames. Lv.24 #126"
-)
-
 #Preview {
-    Charizard
+    StaticView(character: magmar)
+}
+#Preview {
+    StaticView(character: charizard)
 }
