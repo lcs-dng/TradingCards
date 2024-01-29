@@ -20,6 +20,7 @@ struct PlayerListView: View {
                     Text(charizard.pokemonName)
                 }
                 
+                // Second Item
                 NavigationLink {
                     StaticView(character: magmar)
                 } label: {
